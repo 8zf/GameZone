@@ -1,0 +1,879 @@
+{
+  "data": [
+    {
+      "result": 0,
+      "error_info": "",
+      "battle": {
+        "game_id": 2374147108,
+        "start_time": "2016-10-22 23:27:21",
+        "stop_time": "2016-10-22 23:58:44",
+        "duration": 1883,
+        "battle_map": 12,
+        "gamer_num": 10,
+        "game_type": 6,
+        "game_mode": 6,
+        "gamer_records": [
+          {
+            "qquin": "U9647688346997562441",
+            "name": "乌龟5011",
+            "champion_id": 74,
+            "team": 100,
+            "level": 18,
+            "exp": 26013,
+            "win": 1,
+            "item0": 3157,
+            "item1": 3020,
+            "item2": 3165,
+            "item3": 3089,
+            "item4": 3116,
+            "item5": 3136,
+            "gold_earned": 17651,
+            "gold_spent": 16400,
+            "champions_killed": 13,
+            "num_deaths": 8,
+            "assists": 21,
+            "battle_tag_num": 1,
+            "battle_tag_list": [
+              {
+                "tag_id": 3,
+                "name": ""
+              }
+            ],
+            "minions_killed": 116,
+            "turrets_killed": 0,
+            "total_damage_dealt": 115967,
+            "total_damage_dealt_to_champions": 49549,
+            "physical_damage_dealt_to_champions": 1000,
+            "magic_damage_dealt_to_champions": 48548,
+            "largest_killing_spree": 5,
+            "largest_multi_kill": 2,
+            "barracks_killed": 0,
+            "total_damage_taken": 28055,
+            "total_health": 1929,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 13,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 100,
+            "skin_id": 74000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U16330614300960592718",
+            "name": "Karthus丶丘比特",
+            "champion_id": 111,
+            "team": 100,
+            "level": 18,
+            "exp": 27828,
+            "win": 1,
+            "item0": 3068,
+            "item1": 3111,
+            "item2": 3065,
+            "item3": 3001,
+            "item4": 3075,
+            "item5": 1011,
+            "gold_earned": 15887,
+            "gold_spent": 13050,
+            "champions_killed": 11,
+            "num_deaths": 11,
+            "assists": 27,
+            "battle_tag_num": 0,
+            "battle_tag_list": [],
+            "minions_killed": 56,
+            "turrets_killed": 0,
+            "total_damage_dealt": 67728,
+            "total_damage_dealt_to_champions": 25678,
+            "physical_damage_dealt_to_champions": 2983,
+            "magic_damage_dealt_to_champions": 21805,
+            "largest_killing_spree": 2,
+            "largest_multi_kill": 2,
+            "barracks_killed": 0,
+            "total_damage_taken": 46943,
+            "total_health": 2893,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 32,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 101,
+            "skin_id": 111000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U16635583143863419750",
+            "name": "W大灰狼W",
+            "champion_id": 268,
+            "team": 100,
+            "level": 18,
+            "exp": 26014,
+            "win": 1,
+            "item0": 3027,
+            "item1": 3020,
+            "item2": 3116,
+            "item3": 3083,
+            "item4": 3115,
+            "item5": 3135,
+            "gold_earned": 16601,
+            "gold_spent": 15500,
+            "champions_killed": 17,
+            "num_deaths": 9,
+            "assists": 15,
+            "battle_tag_num": 2,
+            "battle_tag_list": [
+              {
+                "tag_id": 1,
+                "name": ""
+              },
+              {
+                "tag_id": 12,
+                "name": ""
+              }
+            ],
+            "minions_killed": 64,
+            "turrets_killed": 1,
+            "total_damage_dealt": 117145,
+            "total_damage_dealt_to_champions": 53195,
+            "physical_damage_dealt_to_champions": 2537,
+            "magic_damage_dealt_to_champions": 50657,
+            "largest_killing_spree": 5,
+            "largest_multi_kill": 2,
+            "barracks_killed": 0,
+            "total_damage_taken": 49516,
+            "total_health": 4343,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 13,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 102,
+            "skin_id": 268000,
+            "flag": 16,
+            "ext_flag": 32768
+          },
+          {
+            "qquin": "U16537793615134438222",
+            "name": "Blitzcrank丶死神",
+            "champion_id": 17,
+            "team": 100,
+            "level": 18,
+            "exp": 25268,
+            "win": 1,
+            "item0": 3157,
+            "item1": 3115,
+            "item2": 1001,
+            "item3": 3031,
+            "item4": 3147,
+            "item5": 0,
+            "gold_earned": 14820,
+            "gold_spent": 14450,
+            "champions_killed": 7,
+            "num_deaths": 13,
+            "assists": 19,
+            "battle_tag_num": 1,
+            "battle_tag_list": [
+              {
+                "tag_id": 10,
+                "name": ""
+              }
+            ],
+            "minions_killed": 58,
+            "turrets_killed": 2,
+            "total_damage_dealt": 73747,
+            "total_damage_dealt_to_champions": 31289,
+            "physical_damage_dealt_to_champions": 8241,
+            "magic_damage_dealt_to_champions": 23048,
+            "largest_killing_spree": 2,
+            "largest_multi_kill": 1,
+            "barracks_killed": 0,
+            "total_damage_taken": 35398,
+            "total_health": 1921,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 13,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 103,
+            "skin_id": 17000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U9349858265053127801",
+            "name": "Soraka丶啊呜",
+            "champion_id": 16,
+            "team": 100,
+            "level": 18,
+            "exp": 24856,
+            "win": 1,
+            "item0": 3165,
+            "item1": 3089,
+            "item2": 3157,
+            "item3": 1001,
+            "item4": 3083,
+            "item5": 0,
+            "gold_earned": 14090,
+            "gold_spent": 12750,
+            "champions_killed": 6,
+            "num_deaths": 8,
+            "assists": 30,
+            "battle_tag_num": 1,
+            "battle_tag_list": [
+              {
+                "tag_id": 2,
+                "name": ""
+              }
+            ],
+            "minions_killed": 17,
+            "turrets_killed": 1,
+            "total_damage_dealt": 52204,
+            "total_damage_dealt_to_champions": 19626,
+            "physical_damage_dealt_to_champions": 1080,
+            "magic_damage_dealt_to_champions": 18546,
+            "largest_killing_spree": 2,
+            "largest_multi_kill": 2,
+            "barracks_killed": 1,
+            "total_damage_taken": 24650,
+            "total_health": 28373,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 32,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 104,
+            "skin_id": 16000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U8946846610743634502",
+            "name": "天下第一帅zf",
+            "champion_id": 15,
+            "team": 200,
+            "level": 18,
+            "exp": 24545,
+            "win": 2,
+            "item0": 3065,
+            "item1": 3033,
+            "item2": 3102,
+            "item3": 3508,
+            "item4": 3006,
+            "item5": 3046,
+            "gold_earned": 16273,
+            "gold_spent": 16750,
+            "champions_killed": 6,
+            "num_deaths": 11,
+            "assists": 26,
+            "battle_tag_num": 1,
+            "battle_tag_list": [
+              {
+                "tag_id": 9,
+                "name": ""
+              }
+            ],
+            "minions_killed": 132,
+            "turrets_killed": 0,
+            "total_damage_dealt": 148124,
+            "total_damage_dealt_to_champions": 35667,
+            "physical_damage_dealt_to_champions": 35667,
+            "magic_damage_dealt_to_champions": 0,
+            "largest_killing_spree": 0,
+            "largest_multi_kill": 1,
+            "barracks_killed": 0,
+            "total_damage_taken": 32033,
+            "total_health": 5375,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 7,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 1,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 105,
+            "skin_id": 15000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U13562984929182570909",
+            "name": "丿云翻涌成夏",
+            "champion_id": 30,
+            "team": 200,
+            "level": 18,
+            "exp": 24510,
+            "win": 2,
+            "item0": 3027,
+            "item1": 1028,
+            "item2": 3116,
+            "item3": 3065,
+            "item4": 3158,
+            "item5": 3105,
+            "gold_earned": 13993,
+            "gold_spent": 11775,
+            "champions_killed": 6,
+            "num_deaths": 13,
+            "assists": 25,
+            "battle_tag_num": 0,
+            "battle_tag_list": [],
+            "minions_killed": 29,
+            "turrets_killed": 0,
+            "total_damage_dealt": 58179,
+            "total_damage_dealt_to_champions": 31547,
+            "physical_damage_dealt_to_champions": 199,
+            "magic_damage_dealt_to_champions": 31348,
+            "largest_killing_spree": 0,
+            "largest_multi_kill": 1,
+            "barracks_killed": 0,
+            "total_damage_taken": 46668,
+            "total_health": 8677,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 7,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 106,
+            "skin_id": 30000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U7779923113171724152",
+            "name": "你丫的姐姐",
+            "champion_id": 86,
+            "team": 200,
+            "level": 18,
+            "exp": 27531,
+            "win": 2,
+            "item0": 2031,
+            "item1": 3190,
+            "item2": 3111,
+            "item3": 3071,
+            "item4": 3065,
+            "item5": 3068,
+            "gold_earned": 16673,
+            "gold_spent": 12550,
+            "champions_killed": 17,
+            "num_deaths": 9,
+            "assists": 22,
+            "battle_tag_num": 3,
+            "battle_tag_list": [
+              {
+                "tag_id": 5,
+                "name": ""
+              },
+              {
+                "tag_id": 1,
+                "name": ""
+              },
+              {
+                "tag_id": 11,
+                "name": ""
+              }
+            ],
+            "minions_killed": 68,
+            "turrets_killed": 1,
+            "total_damage_dealt": 83711,
+            "total_damage_dealt_to_champions": 33571,
+            "physical_damage_dealt_to_champions": 16934,
+            "magic_damage_dealt_to_champions": 11333,
+            "largest_killing_spree": 5,
+            "largest_multi_kill": 3,
+            "barracks_killed": 1,
+            "total_damage_taken": 54792,
+            "total_health": 2611,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 32,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 1,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 107,
+            "skin_id": 86000,
+            "flag": 16,
+            "ext_flag": 34816
+          },
+          {
+            "qquin": "U16760274528873242377",
+            "name": "Deathbark",
+            "champion_id": 81,
+            "team": 200,
+            "level": 18,
+            "exp": 25093,
+            "win": 2,
+            "item0": 3040,
+            "item1": 3100,
+            "item2": 3111,
+            "item3": 3285,
+            "item4": 3001,
+            "item5": 0,
+            "gold_earned": 15072,
+            "gold_spent": 15335,
+            "champions_killed": 10,
+            "num_deaths": 11,
+            "assists": 24,
+            "battle_tag_num": 0,
+            "battle_tag_list": [],
+            "minions_killed": 58,
+            "turrets_killed": 0,
+            "total_damage_dealt": 89753,
+            "total_damage_dealt_to_champions": 38363,
+            "physical_damage_dealt_to_champions": 6670,
+            "magic_damage_dealt_to_champions": 31692,
+            "largest_killing_spree": 2,
+            "largest_multi_kill": 2,
+            "barracks_killed": 0,
+            "total_damage_taken": 25902,
+            "total_health": 6467,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 7,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 2,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 108,
+            "skin_id": 81000,
+            "flag": 16,
+            "ext_flag": 0
+          },
+          {
+            "qquin": "U1662903440452020762",
+            "name": "大蠢的大傻的大蠢",
+            "champion_id": 22,
+            "team": 200,
+            "level": 18,
+            "exp": 24461,
+            "win": 2,
+            "item0": 3139,
+            "item1": 3031,
+            "item2": 3085,
+            "item3": 3111,
+            "item4": 3033,
+            "item5": 0,
+            "gold_earned": 15992,
+            "gold_spent": 13700,
+            "champions_killed": 10,
+            "num_deaths": 11,
+            "assists": 23,
+            "battle_tag_num": 1,
+            "battle_tag_list": [
+              {
+                "tag_id": 10,
+                "name": ""
+              }
+            ],
+            "minions_killed": 90,
+            "turrets_killed": 2,
+            "total_damage_dealt": 99671,
+            "total_damage_dealt_to_champions": 33235,
+            "physical_damage_dealt_to_champions": 28424,
+            "magic_damage_dealt_to_champions": 4810,
+            "largest_killing_spree": 3,
+            "largest_multi_kill": 2,
+            "barracks_killed": 0,
+            "total_damage_taken": 28617,
+            "total_health": 4275,
+            "summon_spell1_id": 4,
+            "summon_spell2_id": 3,
+            "game_score": 0,
+            "item6": 2052,
+            "ward_killed": 0,
+            "ward_placed": 0,
+            "neutral_minions_killed": 0,
+            "super_monster_killed": 0,
+            "id": 109,
+            "skin_id": 22000,
+            "flag": 16,
+            "ext_flag": 0
+          }
+        ],
+        "item_num": 0,
+        "items": [],
+        "team100_killed_dragon_num": 0,
+        "team100_killed_baron_num": 0,
+        "team200_killed_dragon_num": 0,
+        "team200_killed_baron_num": 0,
+        "ext1_num": 10,
+        "ext1_list": [
+          {
+            "attack": 115,
+            "armor": 117,
+            "magic": 584,
+            "magic_resist": 34,
+            "attack_speed": 83,
+            "crit": 0,
+            "move_speed": 385,
+            "cd_ratio": -29,
+            "death_category_num": 4,
+            "death_category": [
+              {
+                "sum_id": 106,
+                "death_num": 2
+              },
+              {
+                "sum_id": 108,
+                "death_num": 3
+              },
+              {
+                "sum_id": 109,
+                "death_num": 2
+              },
+              {
+                "sum_id": 107,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 124,
+            "armor": 257,
+            "magic": 101,
+            "magic_resist": 200,
+            "attack_speed": 72,
+            "crit": 0,
+            "move_speed": 370,
+            "cd_ratio": -19,
+            "death_category_num": 4,
+            "death_category": [
+              {
+                "sum_id": 109,
+                "death_num": 4
+              },
+              {
+                "sum_id": 105,
+                "death_num": 2
+              },
+              {
+                "sum_id": 107,
+                "death_num": 4
+              },
+              {
+                "sum_id": 106,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 110,
+            "armor": 79,
+            "magic": 390,
+            "magic_resist": 30,
+            "attack_speed": 147,
+            "crit": 0,
+            "move_speed": 381,
+            "cd_ratio": -44,
+            "death_category_num": 3,
+            "death_category": [
+              {
+                "sum_id": 107,
+                "death_num": 5
+              },
+              {
+                "sum_id": 108,
+                "death_num": 3
+              },
+              {
+                "sum_id": 105,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 254,
+            "armor": 158,
+            "magic": 150,
+            "magic_resist": 43,
+            "attack_speed": 143,
+            "crit": 20,
+            "move_speed": 509,
+            "cd_ratio": -29,
+            "death_category_num": 5,
+            "death_category": [
+              {
+                "sum_id": 107,
+                "death_num": 3
+              },
+              {
+                "sum_id": 109,
+                "death_num": 3
+              },
+              {
+                "sum_id": 105,
+                "death_num": 1
+              },
+              {
+                "sum_id": 106,
+                "death_num": 2
+              },
+              {
+                "sum_id": 108,
+                "death_num": 4
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 111,
+            "armor": 145,
+            "magic": 432,
+            "magic_resist": 43,
+            "attack_speed": 85,
+            "crit": 0,
+            "move_speed": 528,
+            "cd_ratio": -39,
+            "death_category_num": 4,
+            "death_category": [
+              {
+                "sum_id": 105,
+                "death_num": 2
+              },
+              {
+                "sum_id": 107,
+                "death_num": 4
+              },
+              {
+                "sum_id": 106,
+                "death_num": 1
+              },
+              {
+                "sum_id": 109,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 260,
+            "armor": 86,
+            "magic": 0,
+            "magic_resist": 167,
+            "attack_speed": 132,
+            "crit": 50,
+            "move_speed": 401,
+            "cd_ratio": -39,
+            "death_category_num": 5,
+            "death_category": [
+              {
+                "sum_id": 103,
+                "death_num": 2
+              },
+              {
+                "sum_id": 100,
+                "death_num": 2
+              },
+              {
+                "sum_id": 101,
+                "death_num": 2
+              },
+              {
+                "sum_id": 102,
+                "death_num": 4
+              },
+              {
+                "sum_id": 104,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 105,
+            "armor": 89,
+            "magic": 218,
+            "magic_resist": 127,
+            "attack_speed": 85,
+            "crit": 0,
+            "move_speed": 380,
+            "cd_ratio": -19,
+            "death_category_num": 5,
+            "death_category": [
+              {
+                "sum_id": 101,
+                "death_num": 3
+              },
+              {
+                "sum_id": 100,
+                "death_num": 4
+              },
+              {
+                "sum_id": 104,
+                "death_num": 2
+              },
+              {
+                "sum_id": 102,
+                "death_num": 2
+              },
+              {
+                "sum_id": 103,
+                "death_num": 2
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 210,
+            "armor": 185,
+            "magic": 15,
+            "magic_resist": 228,
+            "attack_speed": 93,
+            "crit": 0,
+            "move_speed": 385,
+            "cd_ratio": -39,
+            "death_category_num": 5,
+            "death_category": [
+              {
+                "sum_id": 101,
+                "death_num": 2
+              },
+              {
+                "sum_id": 100,
+                "death_num": 3
+              },
+              {
+                "sum_id": 103,
+                "death_num": 2
+              },
+              {
+                "sum_id": 102,
+                "death_num": 1
+              },
+              {
+                "sum_id": 104,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 99,
+            "armor": 90,
+            "magic": 390,
+            "magic_resist": 127,
+            "attack_speed": 98,
+            "crit": 0,
+            "move_speed": 438,
+            "cd_ratio": -19,
+            "death_category_num": 6,
+            "death_category": [
+              {
+                "sum_id": 103,
+                "death_num": 1
+              },
+              {
+                "sum_id": 104,
+                "death_num": 1
+              },
+              {
+                "sum_id": 101,
+                "death_num": 2
+              },
+              {
+                "sum_id": 102,
+                "death_num": 4
+              },
+              {
+                "sum_id": 100,
+                "death_num": 2
+              },
+              {
+                "sum_id": 0,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          },
+          {
+            "attack": 288,
+            "armor": 88,
+            "magic": 0,
+            "magic_resist": 102,
+            "attack_speed": 141,
+            "crit": 50,
+            "move_speed": 396,
+            "cd_ratio": 0,
+            "death_category_num": 4,
+            "death_category": [
+              {
+                "sum_id": 102,
+                "death_num": 6
+              },
+              {
+                "sum_id": 101,
+                "death_num": 2
+              },
+              {
+                "sum_id": 100,
+                "death_num": 2
+              },
+              {
+                "sum_id": 104,
+                "death_num": 1
+              }
+            ],
+            "tier": 255,
+            "queue": 255,
+            "win_point": 0,
+            "champion_used_exp": 0
+          }
+        ],
+        "area_id": 1
+      }
+    }
+  ],
+  "code": 0,
+  "msg": "ok"
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Summoner Info</title>
+</head>
+<body>
+<input type="hidden" name="summoner_hotinfo" id="summoner_hotinfo" value="<%= JSON.stringify(summoner_hotinfo) %>">
+<input type="hidden" name="data_pos" id="data_pos" value="<%= JSON.stringify(data_pos) %>">
+<input type="hidden" name="data_kda" id="data_kda" value="<%= JSON.stringify(data_kda) %>">
+<input type="hidden" name="mastery_champion_name_list" id="mastery_champion_name_list" value="<%= JSON.stringify(mastery_champion_name_list) %>">
+<input type="hidden" name="mastery_champion" id="mastery_champion" value="<%= JSON.stringify(mastery_champion) %>">
+
+<!--<script src="../../assets/js/echarts.min.js"></script>-->
+<!--<script src="../../assets/js/bootstrap.min.js"></script>-->
+<!--<link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">-->
+
+<div id="summoner_info">
+    <table class="table">
+        <tr>
+            <td>
+                <img src="<%= 'http://cdn.tgp.qq.com/lol/images/resources/usericon/' + summoner_hotinfo.icon + '.png'%>">
+            </td>
+            <td>
+                <%= summoner_hotinfo.name %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Level
+            </td>
+            <td>
+                <%= summoner_hotinfo.level %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Power value
+            </td>
+            <td>
+                <%= summoner_hotinfo.power_value %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tier
+            </td>
+            <td>
+                <%= summoner_hotinfo.rank %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Win point
+            </td>
+            <td>
+                <%= summoner_hotinfo.win_point %>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="position" style="width: 600px;height:400px;"></div>
+<div id="kda" style="width: 600px;height:400px;"></div>
+<div id="mastery" style="width: 600px;height:400px;"></div>
+
+<div id="recent_combat">
+    <h3>
+        Recent Combat
+    </h3>
+    <table class="table">
+        <tr>
+            <td>
+                Game Type
+            </td>
+            <td>
+               Time
+            </td>
+            <td>
+                Result
+            </td>
+            <td>
+                Result Type
+            </td>
+        </tr>
+        <% for(var i = 0; i < combat_list.length; i++) { %>
+        <tr>
+            <td>
+                <%= combat_list[i].game_type %>
+            </td>
+            <td>
+                <%= combat_list[i].battle_time%>
+            </td>
+            <td>
+                <%= combat_list[i].win %>
+            </td>
+            <td>
+                <%= combat_list[i].flag %>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    //position played chart
+    var chartPos = echarts.init(document.getElementById('position'));
+
+    var optionPos = {
+        title : {
+            text: 'Games played in every position',
+            subtext: 'Data source: games-cube.com',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['Jungle','ADC','Top','Mid','Sup']
+        },
+        series : [
+            {
+                name: 'Position',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data: eval('(' + document.getElementById("data_pos").value + ')'),
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    chartPos.setOption(optionPos);
+
+    //KDA chart
+    var chartKda = echarts.init(document.getElementById('kda'));
+
+    var optionKda = {
+        title : {
+            text: 'Recent KDA',
+            subtext: 'Data source: games-cube.com',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['Kill','Death','Assist']
+        },
+        series : [
+            {
+                name: 'KDA',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data: eval('(' + document.getElementById("data_kda").value + ')'),
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    chartKda.setOption(optionKda);
+
+    //mastery chart
+    var chartMastery = echarts.init(document.getElementById('mastery'));
+
+    var optionMastery = {
+        title : {
+            text: 'Champion mastery TOP10',
+            subtext: 'Data source: games-cube.com',
+            x:'center'
+        },
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            formatter: function (params) {
+//                console.log(params);
+                var src = 'http://ossweb-img.qq.com/images/lol/img/champion/' + params[0].name + '.png';
+                return "<img src=' " +  src + "' style='height: 60px; width: 60px;'><br/>" + "Mastery: " + params[0].data;
+            },
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : eval('(' + document.getElementById("mastery_champion_name_list").value + ')'),
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLabel : {
+                    show:true,
+                    interval: 0,
+                    rotate: 30
+                    // margin: 8
+
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'Mastery',
+                type:'bar',
+                barWidth: '60%',
+                markPoint: {
+                    symbol: 'circle',
+                    symbolSize: 40
+                },
+                data:eval('(' + document.getElementById("mastery_champion").value + ')')
+            }
+        ]
+    };
+
+    chartMastery.setOption(optionMastery);
+
+    //honor chart
+    var chartHonor = echarts.init(document.getElementById('honor'));
+
+    var optionHonor = {};
+
+    chartHonor.setOption(optionHonor);
+
+</script>
+</body>
+</html>

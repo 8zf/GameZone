@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Summoner Info</title>
+</head>
+<body>
+<div id="game_info">
+    <table class="table">
+        <tr>
+            <td>
+                <div align="center">
+                    <h4>
+                        <%= app_detail.name %>
+                    </h4>
+                </div>
+            </td>
+
+            <td rowspan="2">
+                <%- app_detail.detailed_description %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="<%= app_detail.icon %>">
+            </td>
+        </tr>
+    </table>
+</div>
+<br/>
+<h3>
+    Achievements
+</h3>
+<div class=" container row masonry" id="achievements">
+    <% for (var i = 0; i < achievements.length; i++) { %>
+    <div class="col-md-3 item" style="height: 250px;">
+        <div class="thumbnail">
+            <img src="<%= achievements[i].icon %>" alt="<%= achievements[i].displayName %>">
+            <div class="caption" align="center">
+                <h3><%= achievements[i].displayName %></h3>
+                <p><%= achievements[i].description %></p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+</body>
+<script>
+    $('.masonry').imagesLoaded(function() {
+        $('.masonry').masonry({
+            itemSelector: '.item'
+        });
+    });
+</script>
+</html>

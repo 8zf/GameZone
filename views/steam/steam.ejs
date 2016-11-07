@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Steam User Info</title>
+</head>
+<body>
+
+<h3>
+    User Profile
+</h3>
+<div id="user_info">
+    <table class="table">
+        <tr>
+            <td>
+                <img src="<%= user_summary.avatarmedium %>>">
+            </td>
+            <td>
+                <a href="<%= user_summary.profileurl %>"><%= user_summary.personaname %></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Real Name
+            </td>
+            <td>
+                <%= user_summary.realname %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Steam ID
+            </td>
+            <td>
+                <%= user_summary.steamid %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Country
+            </td>
+            <td>
+                <%= user_summary.loccountrycode %>
+            </td>
+        </tr>
+    </table>
+</div>
+<br/>
+
+<h3>
+    Owned Games List
+</h3>
+<div id="owned_game">
+    <table class="table">
+        <% for (var i = 0; i < owned_games.length; i++) { %>
+        <tr>
+            <td>
+                <a href="<%= owned_games[i].achievement_link %>">
+                    <img src="<%= owned_games[i].icon %>">
+                </a>
+            </td>
+            <td>
+                <a href="<%= owned_games[i].official_url %>"><%= owned_games[i].game_name %></a>
+            </td>
+            <td>
+                Played: <%= owned_games[i].playtime_forever %> minutes
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+
+</body>
+</html>

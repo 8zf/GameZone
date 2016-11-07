@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE response>
+<response>
+    <game_count>7</game_count>
+    <games>
+        <message>
+            <appid>4000</appid>
+            <playtime_forever>69</playtime_forever>
+        </message>
+        <message>
+            <appid>620</appid>
+            <playtime_2weeks>214</playtime_2weeks>
+            <playtime_forever>888</playtime_forever>
+        </message>
+        <message>
+            <appid>304430</appid>
+            <playtime_forever>474</playtime_forever>
+        </message>
+        <message>
+            <appid>316390</appid>
+            <playtime_forever>0</playtime_forever>
+        </message>
+        <message>
+            <appid>367450</appid>
+            <playtime_2weeks>35</playtime_2weeks>
+            <playtime_forever>98</playtime_forever>
+        </message>
+        <message>
+            <appid>219740</appid>
+            <playtime_2weeks>1</playtime_2weeks>
+            <playtime_forever>224</playtime_forever>
+        </message>
+        <message>
+            <appid>322330</appid>
+            <playtime_2weeks>18</playtime_2weeks>
+            <playtime_forever>1035</playtime_forever>
+        </message>
+    </games>
+</response>

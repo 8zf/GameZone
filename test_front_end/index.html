@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../assets/js/jquery-3.1.1.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/layer-v2.4/layer/layer.js"></script>
+  <link href="../assets/styles/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="row">
+  <div class="col-md-3">
+    <a href="#" class="thumbnail" id="lol_cn">
+      <img src="../assets/images/LOL-CN.png" alt="LOL-CN">
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#" class="thumbnail" id="lol">
+      <img src="../assets/images/LOL.png" alt="LOL">
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <a href="#" class="thumbnail" id="steam">
+      <img src="../assets/images/steam.jpg" alt="steam">
+    </a>
+  </div>
+  <div class="col-md-3">
+    <a href="#" class="thumbnail" id="overwatch">
+      <img src="../assets/images/Overwatch.jpg" alt="Overwatch">
+    </a>
+  </div>
+</div>
+
+<form method="get" action="target.html">
+  <label for='username'>召唤师名字</label>
+  <input type='text' id='username'>
+  <label for='area'>选择大区</label>
+  <select id='area' class='form-control' style='width: 60%'>
+    <option value='1'>电信一 艾欧尼亚</option><option value='2'>网通一 比尔吉沃特</option><option value='3'>电信二 祖安</option><option value='4'>电信三 诺克萨斯</option><option value='5'>电信四 班德尔城</option><option value='6'>网通二 德玛西亚</option><option value='7'>电信五 皮尔特沃夫</option><option value='8'>电信六 战争学院</option><option value='9'>网通三 弗雷尔卓德</option><option value='10'>电信七 巨神峰</option><option value='11'>电信八 雷瑟守备</option><option value='12'>网通四 无畏先锋</option><option value='13'>电信九 裁决之地</option><option value='14'>电信十 黑色玫瑰</option><option value='15'>电信十一 暗影岛</option><option value='16'>网通五 恕瑞玛</option><option value='17'>电信十二 钢铁烈阳</option><option value='18'>电信十三 水晶之痕</option><option value='19'>电信十四 均衡教派</option><option value='20'>网通六 扭曲丛林</option><option value='21'>教育网 教育网专区</option><option value='22'>电信十五 影流</option><option value='23'>电信十六 守望之海</option><option value='24'>电信十七 征服之海</option><option value='25'>电信十八 卡拉曼达</option><option value='26'>网通七 巨龙之巢</option><option value='27'>电信十九 皮城警备</option>
+  </select>
+</form>
+
+
+
+
+
+</body>
+<script>
+  var temp = {};
+
+  $("#lol_cn").on('click', function () {
+    layer.open({
+      content: "<form method='get' action='target.html' id='userinfo'><label for='username'>召唤师名字</label><br/><input type='text' id='username'><br/><label for='area'>选择大区</label><select id='area' class='form-control'><option value='1'>电信一 艾欧尼亚</option><option value='2'>网通一 比尔吉沃特</option><option value='3'>电信二 祖安</option><option value='4'>电信三 诺克萨斯</option><option value='5'>电信四 班德尔城</option><option value='6'>网通二 德玛西亚</option><option value='7'>电信五 皮尔特沃夫</option><option value='8'>电信六 战争学院</option><option value='9'>网通三 弗雷尔卓德</option><option value='10'>电信七 巨神峰</option><option value='11'>电信八 雷瑟守备</option><option value='12'>网通四 无畏先锋</option><option value='13'>电信九 裁决之地</option><option value='14'>电信十 黑色玫瑰</option><option value='15'>电信十一 暗影岛</option><option value='16'>网通五 恕瑞玛</option><option value='17'>电信十二 钢铁烈阳</option><option value='18'>电信十三 水晶之痕</option><option value='19'>电信十四 均衡教派</option><option value='20'>网通六 扭曲丛林</option><option value='21'>教育网 教育网专区</option><option value='22'>电信十五 影流</option><option value='23'>电信十六 守望之海</option><option value='24'>电信十七 征服之海</option><option value='25'>电信十八 卡拉曼达</option><option value='26'>网通七 巨龙之巢</option><option value='27'>电信十九 皮城警备</option></select></form>",
+      btn: ['确定', '取消'],
+      yes: function(index, layero){
+        console.log(index);
+        console.log(layero);
+        temp = layero[0];
+        console.log(temp.getElementsByTagName("input")[0].value);
+        console.log(temp.getElementsByTagName("select")[0].value);
+        $("#userinfo").submit();
+      }
+    });
+  });
+
+
+
+</script>
+</html>
