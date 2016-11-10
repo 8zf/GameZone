@@ -52,11 +52,14 @@
 <h3>
     Owned Games List
 </h3>
-<div id="owned_game">
+<h5 style="color: dimgrey;">
+    Click image to view your achievement in this game
+</h5>
+<div id="owned_game" class="container">
     <table class="table">
         <% for (var i = 0; i < owned_games.length; i++) { %>
         <tr>
-            <td>
+            <td width="60%">
                 <a href="<%= owned_games[i].achievement_link %>">
                     <img src="<%= owned_games[i].icon %>">
                 </a>

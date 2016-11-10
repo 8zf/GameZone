@@ -310,7 +310,7 @@
 
     function turnToPage(page) {
 
-        $.get('http://localhost:1337/lolcn/combatlist?qquin=' + document.getElementById('qquin').innerHTML.trim() + '&vaid=' + document.getElementById('vaid').value + '&p=' + page, function (data, status) {
+        $.get('http://139.129.30.235/lolcn/combatlist?qquin=' + document.getElementById('qquin').innerHTML.trim() + '&vaid=' + document.getElementById('vaid').value + '&p=' + page, function (data, status) {
             console.log('http://localhost:1337/lolcn/combatlist?qquin=' + document.getElementById('qquin').innerHTML.trim() + '&vaid=' + document.getElementById('vaid').value + '&p=' + page);
             $('#combat_list tr:gt(0)').remove();
             var data_json = eval('(' + data + ')');
