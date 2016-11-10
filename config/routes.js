@@ -37,6 +37,7 @@ module.exports.routes = {
   },
 
   'get /lolcn': 'Lol_cnController.getInfo',
+  'get /lolcn/combatlist': 'Lol_cnController.getCombatList',
   'get /steam': 'SteamController.getInfo',
   'get /steam_achievement': 'SteamController.getAchievement',
   'get /overwatch': 'OverwatchController.getInfo'

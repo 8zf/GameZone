@@ -10,28 +10,30 @@
 </head>
 <body>
 
-<div class="row">
-  <div class="col-md-3">
-    <a href="#" class="thumbnail" id="lol_cn">
-      <img src="images/LOL-CN.png" alt="LOL-CN">
-    </a>
+<div style="position: relative">
+  <div class="row" style="top: 50%; left: 50%">
+    <div class="col-md-3">
+      <a href="#" class="thumbnail" id="lol_cn">
+        <img src="images/LOL-CN.png" alt="LOL-CN">
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#" class="thumbnail" id="lol">
+        <img src="images/LOL.png" alt="LOL">
+      </a>
+    </div>
   </div>
-  <div class="col-md-3">
-    <a href="#" class="thumbnail" id="lol">
-      <img src="images/LOL.png" alt="LOL">
-    </a>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-3">
-    <a href="#" class="thumbnail" id="steam">
-      <img src="images/steam.jpg" alt="steam">
-    </a>
-  </div>
-  <div class="col-md-3">
-    <a href="#" class="thumbnail" id="overwatch">
-      <img src="images/Overwatch.jpg" alt="Overwatch">
-    </a>
+  <div class="row">
+    <div class="col-md-3">
+      <a href="#" class="thumbnail" id="steam">
+        <img src="images/steam.jpg" alt="steam">
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="#" class="thumbnail" id="overwatch">
+        <img src="images/Overwatch.jpg" alt="Overwatch">
+      </a>
+    </div>
   </div>
 </div>
 
@@ -79,6 +81,13 @@
         console.log(temp.getElementsByTagName("input")[0].value);
         $("#overwatch_user_info").submit();
       }
+    });
+  });
+
+  $("#lol").on('click', function () {
+    layer.open({
+      content: "敬请期待",
+      btn: ['确定', '取消']
     });
   });
 

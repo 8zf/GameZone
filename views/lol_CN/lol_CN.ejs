@@ -8,9 +8,10 @@
 <input type="hidden" name="summoner_hotinfo" id="summoner_hotinfo" value="<%= JSON.stringify(summoner_hotinfo) %>">
 <input type="hidden" name="data_pos" id="data_pos" value="<%= JSON.stringify(data_pos) %>">
 <input type="hidden" name="data_kda" id="data_kda" value="<%= JSON.stringify(data_kda) %>">
-<input type="hidden" name="mastery_champion_name_list" id="mastery_champion_name_list" value="<%= JSON.stringify(mastery_champion_name_list) %>">
+<input type="hidden" name="mastery_champion_name_list" id="mastery_champion_name_list"
+       value="<%= JSON.stringify(mastery_champion_name_list) %>">
 <input type="hidden" name="mastery_champion" id="mastery_champion" value="<%= JSON.stringify(mastery_champion) %>">
-
+<input type="hidden" name="vaid" id="vaid" value="<%= summoner_hotinfo.area_id %>">
 <!--<script src="../../assets/js/echarts.min.js"></script>-->
 <!--<script src="../../assets/js/bootstrap.min.js"></script>-->
 <!--<link rel="stylesheet" href="../../assets/styles/bootstrap.min.css">-->
@@ -19,10 +20,18 @@
     <table class="table">
         <tr>
             <td>
-                <img src="<%= 'http://cdn.tgp.qq.com/lol/images/resources/usericon/' + summoner_hotinfo.icon + '.png'%>">
+                <img src="<%= 'http://cdn.tgp.qq.com/lol/images/resources/usericon/' + summoner_hotinfo.icon + '.png' %>">
             </td>
             <td>
                 <%= summoner_hotinfo.name %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Unique ID
+            </td>
+            <td id="qquin">
+                <%= summoner_hotinfo.qquin %>
             </td>
         </tr>
         <tr>
@@ -68,13 +77,19 @@
     <h3>
         Recent Combat
     </h3>
-    <table class="table">
+    <table class="table" id="combat_list">
         <tr>
             <td>
                 Game Type
             </td>
             <td>
-               Time
+                Game ID
+            </td>
+            <td>
+                Champion
+            </td>
+            <td>
+                Time
             </td>
             <td>
                 Result
@@ -83,50 +98,46 @@
                 Result Type
             </td>
         </tr>
-        <% for(var i = 0; i < combat_list.length; i++) { %>
-        <tr>
-            <td>
-                <%= combat_list[i].game_type %>
-            </td>
-            <td>
-                <%= combat_list[i].battle_time%>
-            </td>
-            <td>
-                <%= combat_list[i].win %>
-            </td>
-            <td>
-                <%= combat_list[i].flag %>
-            </td>
-        </tr>
-        <% } %>
     </table>
+    <nav>
+        <ul class="pagination" id="turn_page">
+            <li><a id="page_up">&laquo;</a></li>
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>3</a></li>
+            <li><a>4</a></li>
+            <li><a>5</a></li>
+            <li><a id="page_down">&raquo;</a></li>
+        </ul>
+    </nav>
 </div>
 
+<!--initialize E-Chart-->
 <script type="text/javascript">
 
     //position played chart
     var chartPos = echarts.init(document.getElementById('position'));
 
     var optionPos = {
-        title : {
+        title: {
             text: 'Games played in every position',
             subtext: 'Data source: games-cube.com',
-            x:'center'
+            x: 'center'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
         legend: {
             orient: 'vertical',
             left: 'left',
-            data: ['Jungle','ADC','Top','Mid','Sup']
+            data: ['Jungle', 'ADC', 'Top', 'Mid', 'Sup']
         },
-        series : [
+        series: [
             {
                 name: 'Position',
                 type: 'pie',
-                radius : '55%',
+                radius: '55%',
                 center: ['50%', '60%'],
                 data: eval('(' + document.getElementById("data_pos").value + ')'),
                 itemStyle: {
@@ -146,25 +157,25 @@
     var chartKda = echarts.init(document.getElementById('kda'));
 
     var optionKda = {
-        title : {
+        title: {
             text: 'Recent KDA',
             subtext: 'Data source: games-cube.com',
-            x:'center'
+            x: 'center'
         },
-        tooltip : {
+        tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
         legend: {
             orient: 'vertical',
             left: 'left',
-            data: ['Kill','Death','Assist']
+            data: ['Kill', 'Death', 'Assist']
         },
-        series : [
+        series: [
             {
                 name: 'KDA',
                 type: 'pie',
-                radius : '55%',
+                radius: '55%',
                 center: ['50%', '60%'],
                 data: eval('(' + document.getElementById("data_kda").value + ')'),
                 itemStyle: {
@@ -184,21 +195,21 @@
     var chartMastery = echarts.init(document.getElementById('mastery'));
 
     var optionMastery = {
-        title : {
+        title: {
             text: 'Champion mastery TOP10',
             subtext: 'Data source: games-cube.com',
-            x:'center'
+            x: 'center'
         },
         color: ['#3398DB'],
-        tooltip : {
+        tooltip: {
             trigger: 'axis',
             formatter: function (params) {
 //                console.log(params);
                 var src = 'http://ossweb-img.qq.com/images/lol/img/champion/' + params[0].name + '.png';
-                return "<img src=' " +  src + "' style='height: 60px; width: 60px;'><br/>" + "Mastery: " + params[0].data;
+                return "<img src=' " + src + "' style='height: 60px; width: 60px;'><br/>" + "Mastery: " + params[0].data;
             },
-            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
             }
         },
         grid: {
@@ -207,15 +218,15 @@
             bottom: '3%',
             containLabel: true
         },
-        xAxis : [
+        xAxis: [
             {
-                type : 'category',
-                data : eval('(' + document.getElementById("mastery_champion_name_list").value + ')'),
+                type: 'category',
+                data: eval('(' + document.getElementById("mastery_champion_name_list").value + ')'),
                 axisTick: {
                     alignWithLabel: true
                 },
-                axisLabel : {
-                    show:true,
+                axisLabel: {
+                    show: true,
                     interval: 0,
                     rotate: 30
                     // margin: 8
@@ -223,21 +234,21 @@
                 }
             }
         ],
-        yAxis : [
+        yAxis: [
             {
-                type : 'value'
+                type: 'value'
             }
         ],
-        series : [
+        series: [
             {
-                name:'Mastery',
-                type:'bar',
+                name: 'Mastery',
+                type: 'bar',
                 barWidth: '60%',
                 markPoint: {
                     symbol: 'circle',
                     symbolSize: 40
                 },
-                data:eval('(' + document.getElementById("mastery_champion").value + ')')
+                data: eval('(' + document.getElementById("mastery_champion").value + ')')
             }
         ]
     };
@@ -251,6 +262,87 @@
 
     chartHonor.setOption(optionHonor);
 
+</script>
+
+<!--Generate combat list-->
+<script>
+    console.log('start yo');
+    var cur_page = 0;
+    turnToPage(0);
+    setActive(1);
+    $('#turn_page a').click(function () {
+        console.log(this.innerHTML);
+        if (this.id == 'page_down')
+        {
+            cur_page++;
+            if (cur_page % 5 == 0)
+                    refresh(cur_page);
+        }
+        else if (this.id == 'page_up')
+        {
+            cur_page--;
+            if (cur_page % 5 == 4)
+                refresh(cur_page-4);
+        }
+        else
+            cur_page = parseInt(this.innerHTML) - 1;
+        setActive(cur_page+1);
+        if (cur_page % 5 == 0)
+        {
+            refresh(cur_page);
+        }
+        if(cur_page < 0 || cur_page > 49)
+                cur_page = 0;
+        turnToPage(cur_page);
+    });
+
+    function setActive(page) {
+        $('#turn_page a').parent().removeClass('active');
+        $('#turn_page a:contains(' + page + ')').parent().addClass('active');
+    }
+
+    function refresh(start_page) {
+        for ( var i = 1; i <= 5; i++)
+        {
+            $('#turn_page a:eq(' + i + ')').html(start_page + i);
+        }
+    }
+
+    function turnToPage(page) {
+
+        $.get('http://localhost:1337/lolcn/combatlist?qquin=' + document.getElementById('qquin').innerHTML.trim() + '&vaid=' + document.getElementById('vaid').value + '&p=' + page, function (data, status) {
+            console.log('http://localhost:1337/lolcn/combatlist?qquin=' + document.getElementById('qquin').innerHTML.trim() + '&vaid=' + document.getElementById('vaid').value + '&p=' + page);
+            $('#combat_list tr:gt(0)').remove();
+            var data_json = eval('(' + data + ')');
+            console.log(data_json);
+            for (var i = 0; i < data_json.length; i++) {
+                $('#combat_list').append(
+                        '<tr>'
+                        + '<td>'
+                        + data_json[i].game_type
+                        + '</td>'
+                        + '<td>'
+                        + data_json[i].game_id
+                        + '</td>'
+                        + '<td>'
+                        + data_json[i].champion_name
+                        + '</td>'
+                        + '<td>'
+                        + data_json[i].battle_time
+                        + '</td>'
+                        + '<td>'
+                        + data_json[i].win
+                        + '</td>'
+                        + '<td>'
+                        + data_json[i].flag
+                        + '</td>'
+                        + '</tr>'
+                );
+                data_json[i].champion_name;
+            }
+        });
+
+    }
 </script>
 </body>
 </html>

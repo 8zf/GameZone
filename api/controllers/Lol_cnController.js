@@ -8,10 +8,14 @@
 var co = require('co');
 var rp = require('request-promise');
 
-const TOKEN = "A2447-12FA7-49373-342A7";
+const TOKEN = "849DA-87A0A-AA099-F2699";
 
 module.exports = {
   getInfo: function (req, res) {
+    if(!req.query.summoner_name || !req.query.vaid)
+    {
+      res.view('404');
+    }
     var name = req.query.summoner_name;
     var vaid = req.query.vaid;
     console.log('Request summoner name: ' + name + ' vaid: ' + vaid);
@@ -27,9 +31,18 @@ module.exports = {
         }
       };
       var summoner = {};
-      var all_summoners = yield rp(options);
-      all_summoners = eval('(' + all_summoners + ')');
-
+      // var all_summoners = yield rp(options);
+      // all_summoners = eval('(' + all_summoners + ')');
+      try {
+        var all_summoners = yield rp(options);
+        all_summoners = eval('(' + all_summoners + ')');
+      }
+      catch(err) {
+        res.view('error', {
+          result: eval('(' + JSON.parse(err.message.substring(5)) + ')').msg
+        });
+      }
+      // console.log(all_summoners);
       //find corresponding one
       
       var result;
@@ -112,8 +125,10 @@ module.exports = {
       var mastery_champion_name_list = [];
       var mastery_champion = [];
 
-      for ( var i = 0; i < 10; i++)
+      for ( var i = 0; i < (10 < mastery.length ? 10 : mastery.length); i++)
       {
+        // console.log(typeof mastery[i].champion_id);
+        // console.log(mastery[i].champion_id + '  ' + i);
         var temp = yield rp({
           url: 'http://lolapi.games-cube.com/GetChampionENName?id=' + mastery[i].champion_id,
           headers: {
@@ -131,22 +146,125 @@ module.exports = {
 
 
       //get summoner combat list
-      options = {
-        url: 'http://lolapi.games-cube.com/CombatList?qquin='
-          + encodeURI(summoner.qquin)
-          + '&vaid=' + vaid,
-        headers: {
-          'DAIWAN-API-TOKEN': TOKEN
-        }
-      };
-      if(typeof req.query.p != 'undefined')
-        options.url += '&p=' + req.query.p.toString();
-      var combat_list = yield rp(options);
+      // options = {
+      //   url: 'http://lolapi.games-cube.com/CombatList?qquin='
+      //     + encodeURI(summoner.qquin)
+      //     + '&vaid=' + vaid,
+      //   headers: {
+      //     'DAIWAN-API-TOKEN': TOKEN
+      //   }
+      // };
+      // if(typeof req.query.p != 'undefined')
+      //   options.url += '&p=' + req.query.p.toString();
+      // var combat_list = yield rp(options);
+      // combat_list = eval('(' + combat_list + ')');
+      // combat_list = combat_list.data[0].battle_list;
+      // for (var i = 0; i < combat_list.length; i++)
+      // {
+      //
+      //   options = {
+      //     url: 'http://lolapi.games-cube.com/GetWin?win=' + combat_list[i].win,
+      //     headers: {
+      //       'DAIWAN-API-TOKEN': TOKEN
+      //     }
+      //   };
+      //   var win = yield rp(options);
+      //   win = eval('(' + win + ')');
+      //   if(win.data.length == 0)
+      //     win = "Unknown";
+      //   else
+      //     win = win.data[0].return;
+      //   combat_list[i].win = win;
+      //
+      //   options = {
+      //     url: 'http://lolapi.games-cube.com/GetGameType?game_type=' + combat_list[i].game_type,
+      //     headers: {
+      //       'DAIWAN-API-TOKEN': TOKEN
+      //     }
+      //   };
+      //   var game_type = yield rp(options);
+      //   game_type = eval('(' + game_type + ')');
+      //   if(game_type.data.length == 0)
+      //   {
+      //     if(combat_list[i].game_type == 25)
+      //       game_type = "末日人机";
+      //     else
+      //       game_type = "Unknown";
+      //   }
+      //   else
+      //     game_type = game_type.data[0].name;
+      //   combat_list[i].game_type = game_type;
+      //
+      //   options = {
+      //     url: 'http://lolapi.games-cube.com/GetJudgement?flag=' + combat_list[i].flag,
+      //     headers: {
+      //       'DAIWAN-API-TOKEN': TOKEN
+      //     }
+      //   };
+      //   var flag = yield rp(options);
+      //   flag = eval('(' + flag + ')');
+      //   if(flag.data.length.length == 0)
+      //     flag = "Unknown";
+      //   else
+      //     flag = flag.data[0].return;
+      //   combat_list[i].flag = flag;
+      //
+      // }
+
+
+      //return result to ejs
+      res.view('lol_CN/lol_CN', {
+        summoner_hotinfo: summoner_hotinfo,
+        data_pos: data_pos,
+        data_kda: data_kda,
+        mastery_champion_name_list: mastery_champion_name_list,
+        mastery_champion: mastery_champion
+        // combat_list: combat_list
+      });
+
+
+
+    }).catch((err)=> {
+      res.view('error', {
+        result: err
+      });
+    });
+
+  },
+
+  getCombatList: function (req, res) {
+    if(!req.query.qquin || !req.query.vaid)
+    {
+      res.view('404', {});
+    }
+    var qquin = req.query.qquin;
+    var vaid = req.query.vaid;
+
+    var options = {
+      url: 'http://lolapi.games-cube.com/CombatList?'
+      + 'qquin='+ qquin
+      + '&vaid=' + vaid,
+      headers: {
+        'DAIWAN-API-TOKEN': TOKEN
+      }
+    };
+    if(typeof req.query.p != 'undefined')
+      options.url += '&p=' + req.query.p.toString();
+    // console.log(options.url);
+    co(function*() {
+      try {
+        var combat_list = yield rp(options);
+      }
+      catch(err) {
+        res.view('error', {
+          result: err
+        });
+      }
       combat_list = eval('(' + combat_list + ')');
+      // console.log(combat_list);
       combat_list = combat_list.data[0].battle_list;
       for (var i = 0; i < combat_list.length; i++)
       {
-
         options = {
           url: 'http://lolapi.games-cube.com/GetWin?win=' + combat_list[i].win,
           headers: {
@@ -194,25 +312,24 @@ module.exports = {
           flag = flag.data[0].return;
         combat_list[i].flag = flag;
 
+        options = {
+          url: 'http://lolapi.games-cube.com/GetChampionCNName?id=' + combat_list[i].champion_id,
+          headers: {
+            'DAIWAN-API-TOKEN': TOKEN
+          }
+        };
+        var champion_name = yield rp(options);
+        champion_name = eval('(' + champion_name + ')');
+        if(champion_name.data.length == 0)
+          champion_name = "Unknown Champion";
+        else
+          champion_name = champion_name.data[0].return;
+        combat_list[i].champion_name = champion_name;
+
       }
-
-
-      //return result to ejs
-      res.view('lol_CN/lol_CN', {
-        summoner_hotinfo: summoner_hotinfo,
-        data_pos: data_pos,
-        data_kda: data_kda,
-        mastery_champion_name_list: mastery_champion_name_list,
-        mastery_champion: mastery_champion,
-        combat_list: combat_list
-      });
-
-
-
-    }).catch((err)=> {
-      res.send(err);
+      res.send(JSON.stringify(combat_list));
     });
-
   }
+  
 };
 
