@@ -8,7 +8,7 @@
 var co = require('co');
 var rp = require('request-promise');
 
-const TOKEN = "849DA-87A0A-AA099-F2699";
+const TOKEN = "B8888-B4852-855BB-288AA";
 
 module.exports = {
   getInfo: function (req, res) {
