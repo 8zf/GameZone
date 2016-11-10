@@ -49,14 +49,14 @@ module.exports = {
       for (var index in all_summoners.data) {
         if (all_summoners.data[index].area_id == vaid.toString()) {
           summoner = all_summoners.data[index];
-          console.log("find corresponding one! in: " + index);
+          // console.log("find corresponding one! in: " + index);
           break;
         }
       }
 
       if (JSON.stringify(summoner).length < 3) {
         result = "Sorry we can't find this summoner";
-        console.log("nobody found");
+        // console.log("nobody found");
         res.view('lol_CN/not_found', {result: result});
       }
       console.log(summoner);

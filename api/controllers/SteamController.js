@@ -15,7 +15,7 @@ module.exports = {
   getInfo: function (req, res) {
     var steamid = req.query.steamid;
     console.log('steamid: ' + steamid);
-    console.log('key: ' + KEY);
+    // console.log('key: ' + KEY);
     co(function*() {
 
       //get user summary
@@ -41,10 +41,10 @@ module.exports = {
       owned_games = yield rp(options);
       owned_games = yield xml2js(owned_games, {explicitArray: false});
       owned_games = owned_games.response.games.message;
-      console.log(owned_games);
+      // console.log(owned_games);
       var game_name;
 
-      console.log("loop begin");
+      // console.log("loop begin");
       for (var i = 0; i < owned_games.length; i++) {
 
         game_name = yield rp({url: 'http://store.steampowered.com/api/appdetails?appids=' + owned_games[i].appid});
@@ -52,14 +52,14 @@ module.exports = {
         owned_games[i].icon = "https://steamcdn-a.akamaihd.net/steam/apps/" + owned_games[i].appid + "/header.jpg";
         owned_games[i].official_url = "http://store.steampowered.com/app/" + owned_games[i].appid;
         owned_games[i].achievement_link = "/steam_achievement?steamid=" + steamid + "&appid=" + owned_games[i].appid;
-        console.log(owned_games[i].appid + ': ' + game_name[owned_games[i].appid].data.name)
-        console.log(owned_games[i].icon);
+        // console.log(owned_games[i].appid + ': ' + game_name[owned_games[i].appid].data.name)
+        // console.log(owned_games[i].icon);
         owned_games[i].game_name = game_name[owned_games[i].appid].data.name;
       }
-      console.log("loop end");
+      // console.log("loop end");
 
-      console.log(user_summary);
-      console.log(owned_games);
+      // console.log(user_summary);
+      // console.log(owned_games);
       res.view('steam/steam', {
         user_summary: user_summary,
         owned_games: owned_games
